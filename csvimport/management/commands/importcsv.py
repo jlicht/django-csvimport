@@ -433,6 +433,7 @@ class Command(LabelCommand, CSVParser):
             foreign keys, therefore foreign data
         """
         fk_key, fk_field = foreignkey
+        fk_key = fk_key.strip()
         if fk_key and fk_field:
             try:
                 new_app_label = ContentType.objects.get(model=fk_key).app_label
